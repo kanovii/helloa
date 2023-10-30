@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lost-koko/static/css/main.9a5ee828.css",
+    "main.js": "/lost-koko/static/js/main.c242a1d8.js",
+    "index.html": "/lost-koko/index.html",
+    "main.9a5ee828.css.map": "/lost-koko/static/css/main.9a5ee828.css.map",
+    "main.c242a1d8.js.map": "/lost-koko/static/js/main.c242a1d8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a5ee828.css",
+    "static/js/main.c242a1d8.js"
+  ]
+}

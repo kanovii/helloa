@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/helloa/static/css/main.5679a738.css",
-    "main.js": "/helloa/static/js/main.d8376b93.js",
+    "main.js": "/helloa/static/js/main.b8f1b293.js",
+    "static/media/loading.gif": "/helloa/static/media/loading.dd903f1a96d9e36cd5bc.gif",
+    "static/media/mokoko.png": "/helloa/static/media/mokoko.ccec48b877f737723efd.png",
     "index.html": "/helloa/index.html",
     "main.5679a738.css.map": "/helloa/static/css/main.5679a738.css.map",
-    "main.d8376b93.js.map": "/helloa/static/js/main.d8376b93.js.map"
+    "main.b8f1b293.js.map": "/helloa/static/js/main.b8f1b293.js.map"
   },
   "entrypoints": [
     "static/css/main.5679a738.css",
-    "static/js/main.d8376b93.js"
+    "static/js/main.b8f1b293.js"
   ]
 }

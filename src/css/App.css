@@ -1,0 +1,76 @@
+@import url('./Nav.css');
+@import url('./Search.css');
+@import url('var.css');
+
+body {
+    background-color: #15181d;
+    color: var(--color-default);
+    font-weight: var(--font-weight-dafault);
+    font-family: var(--font-famillies-default);
+    font-display: swap;
+}
+a,
+a:link,
+a:active,
+a:hover,
+a:visited {
+    text-decoration: none;
+    color: var(--color-default);
+}
+.navSmallBorder {
+    border-bottom: solid 3px var(--border-outline-more) !important;
+    color: #eee !important;
+}
+.boxBasic {
+    box-shadow: var(--box-shadow-default);
+    box-sizing: border-box;
+
+    border: solid 1px;
+    border-radius: 15px;
+    border-color: var(--background-color-default);
+
+    background-color: var(--background-color-default);
+
+    padding: 0.825rem;
+}
+
+.inlieBlock {
+    display: inline-block;
+}
+.padding1rem {
+    padding: 1rem;
+}
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    box-sizing: border-box;
+
+    border-left: solid 1px var(--border-outline);
+    border-right: solid 1px var(--border-outline);
+}
+.innerContainer {
+    padding: 0.825rem;
+}
+
+.textSm {
+    font-size: 0.825rem;
+}
+
+@media (max-width: 1250px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 550px;
+    }
+}
+/* @media (max-width: 576px) {
+    .container {
+        max-width: 410px;
+    }
+} */

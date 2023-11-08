@@ -1,0 +1,16 @@
+:root {
+    --color-default: #c2c2cc;
+    --color-more: #eee;
+    --color-less: #8f8f98;
+    --font-weight-dafault: 600;
+    --box-shadow-default: 4px 6px 11px -5px #000000;
+
+    --background-color-default: #1c1f26;
+    --background-color-less: #2b313a;
+
+    --container-witdh-default: 1200px;
+    --font-famillies-default: 'Noto Sans KR', sans-serif;
+    --border-outline: #464c56;
+    --border-outline-more: #9b9fa5;
+    --border-outline-line: solid 1px var(--border-outline);
+}

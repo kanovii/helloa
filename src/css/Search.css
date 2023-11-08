@@ -1,0 +1,14 @@
+.searchBox {
+    width: 100%;
+    height: 40px;
+    text-align: start;
+    display: block;
+    box-sizing: border-box;
+
+    color: #eee;
+}
+
+.innerContainer > input.searchBox {
+    background-color: var(--background-color-less);
+    border-color: var(--border-outline);
+}

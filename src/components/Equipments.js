@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//스타일 시작 ===============================================================>
 const EquLineBox = styled.div`
     display: flex;
     gap: 1rem;
@@ -73,10 +74,9 @@ const QualityBox = styled.span`
 
     border: ${(props) => (props.quality ? 'none' : ` solid 1px var(--border-outline)`)};
 `;
+//스타일 끝 ===============================================================>
 
 export default function Equipments({ equData }) {
-    console.log(equData);
-
     return (
         <>
             {equData ? (
@@ -85,9 +85,6 @@ export default function Equipments({ equData }) {
                         <EquLineBoxLine>
                             {equData.data.map((data, index) => {
                                 let tooltip = JSON.parse(data.Tooltip);
-                                if (index < 6) {
-                                    console.log(data.Grade);
-                                }
 
                                 return (
                                     <>

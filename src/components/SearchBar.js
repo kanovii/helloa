@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { GoSearch } from 'react-icons/go';
 import styled from 'styled-components';
 
+//스타일 시작 ===============================================================>
 const GoSearchBox = styled.span`
     position: absolute;
     right: 27px;
@@ -12,6 +13,7 @@ const GoSearchBox = styled.span`
 const InCon = styled.div`
     position: relative;
 `;
+//스타일 끝 ===============================================================>
 
 export default function SearchBar() {
     const [chaName, setChaname] = useState('');

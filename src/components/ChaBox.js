@@ -2,7 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Equipments from './Equipments';
+import Card from './Card';
 
+//스타일 시작 ===============================================================>
 const ChaContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -72,8 +74,9 @@ const Img = styled.img`
         box-shadow: none;
     }
 `;
+//스타일 끝 ===============================================================>
 
-export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData, engravingsData }) {
+export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData, engravingsData, cardData }) {
     console.log(engravingsData);
 
     return (
@@ -110,6 +113,7 @@ export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData
                         </InnerChaDetailBox>
                     </ChaDetailBox>
                     <Equipments equData={equData} engravingsData={engravingsData} />
+                    <Card cardData={cardData} />
                 </ChaContainer>
             ) : (
                 <></>

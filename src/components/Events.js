@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import { GiPartyPopper } from 'react-icons/gi';
 
+//스타일 시작 ===============================================================>
 const Loading = styled.div`
     text-align: center;
 `;
@@ -67,14 +68,7 @@ const EventsDate = styled.div`
     width: 100%;
 `;
 
-const InfoBox = styled.span`
-    padding: 0.5rem;
-    display: inline-block;
-
-    background-color: #2b313a;
-    border-radius: 0.5rem;
-    margin-right: 10px;
-`;
+//스타일 끝 ===============================================================>
 
 export default function Events() {
     const { data: events, isLoading } = useQuery({

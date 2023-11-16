@@ -14,6 +14,7 @@ const todayEnd = new Date(today.getFullYear(), today.getMonth(), today.getDate()
 const morning = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 14, 0, 0);
 const afternoon = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 23, 59, 59);
 
+//스타일 시작 ===============================================================>
 const Loading = styled.div`
     width: 100%;
     text-align: center;
@@ -106,6 +107,7 @@ const Reward = styled.span`
 const RewardImg = styled.img`
     width: 22px;
 `;
+//스타일 끝 ===============================================================>
 
 export default function Island() {
     const [morningIsland, setMorningIsland] = useState([]);

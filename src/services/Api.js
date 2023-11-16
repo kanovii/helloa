@@ -82,3 +82,19 @@ export const getEventsData = async () => {
         return data;
     }
 };
+
+// 카드
+export const getCardData = async (chaName) => {
+    let data = await axios.get(url + `/armories/characters/${chaName}/cards`, {
+        headers: {
+            accept: 'application/json',
+            Authorization: `bearer ${apiKey}`,
+        },
+    });
+
+    if (data.data === null) {
+        return null;
+    } else {
+        return data;
+    }
+};

@@ -1,16 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
-import { getChaData, getEquData, getEngravingsData } from './../services/Api';
+import { getChaData, getEquData, getEngravingsData, getCardData } from './../services/Api';
 import { useLocation } from 'react-router';
 import { LuSprout } from 'react-icons/lu';
 import mokoko from './../img/mokoko.png';
 import backimg from './../img/backimg.jpg';
-import loading from './../img/loading.gif';
 import { GoSearch } from 'react-icons/go';
 
 import ChaBox from './ChaBox';
 import styled from 'styled-components';
 
+//스타일 시작 ===============================================================>
 const Loading = styled.div`
     text-align: center;
 `;
@@ -54,6 +54,7 @@ const NoneImg = styled.img`
 
     width: inherit;
 `;
+//스타일 끝 ===============================================================>
 
 export default function Search() {
     const [chaName, setChaname] = useState('');
@@ -86,12 +87,17 @@ export default function Search() {
         enabled: true,
     });
 
+    const { data: cardData } = useQuery({
+        queryKey: ['cardData', onChaName],
+        queryFn: () => getCardData(chaName),
+        enabled: true,
+    });
+
     const handleSearch = () => {
         setOnChaName(chaName);
     };
 
     useEffect(() => {
-        console.log(chaInfo);
         if (error) {
             console.log(error.message);
         }
@@ -135,6 +141,7 @@ export default function Search() {
                         CharacterImage={chaInfo.data.CharacterImage}
                         equData={equData}
                         engravingsData={engravingsData}
+                        cardData={cardData}
                     />
                     {chaInfo.data.CharacterName ? (
                         <></>

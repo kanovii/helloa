@@ -10,11 +10,16 @@ const CardBox = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+    width: 100%;
+    max-width: 700px;
     @media (max-width: 768px) {
         display: grid;
         grid-template-columns: repeat(3, 86px);
-        gap: 1rem;
+        gap: 0.5rem;
+        justify-content: space-evenly;
     }
+    margin: 0 auto;
 `;
 
 const CardLine = styled.div`
@@ -86,6 +91,36 @@ const Glow = styled.div`
             : '0';
     }};
 `;
+
+const InfoBox = styled.div`
+    display: block;
+
+    @media (max-width: 768px) {
+        padding-right: 0.6rem;
+        border-right: solid 1px var(--border-outline);
+    }
+`;
+
+const CardSection = styled.div`
+    @media (max-width: 768px) {
+        display: flex;
+        gap: 0.6rem;
+    }
+`;
+
+const InfoBoxText = styled.div`
+    padding: 0.5rem;
+    background-color: #2b313a;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+
+    width: 47px;
+    text-align: center;
+    margin-bottom: 12px;
+    @media (max-width: 768px) {
+        margin-bottom: 0;
+    }
+`;
 // 스타일 끝 ===============================================================>
 
 export default function Card({ cardData }) {
@@ -96,7 +131,10 @@ export default function Card({ cardData }) {
     return (
         <>
             {cardData ? (
-                <div className='boxBasic'>
+                <CardSection className='boxBasic'>
+                    <InfoBox>
+                        <InfoBoxText>카드</InfoBoxText>
+                    </InfoBox>
                     <CardBox>
                         {cardData.data.Cards.map((i) => {
                             console.log(i.Grade);
@@ -112,7 +150,7 @@ export default function Card({ cardData }) {
                             );
                         })}
                     </CardBox>
-                </div>
+                </CardSection>
             ) : (
                 <div></div>
             )}

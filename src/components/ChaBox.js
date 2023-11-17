@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Equipments from './Equipments';
 import Card from './Card';
+import GemBox from './Gem';
 
 //스타일 시작 ===============================================================>
 const ChaContainer = styled.div`
@@ -76,7 +77,7 @@ const Img = styled.img`
 `;
 //스타일 끝 ===============================================================>
 
-export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData, engravingsData, cardData }) {
+export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData, engravingsData, cardData, gemData }) {
     console.log(engravingsData);
 
     return (
@@ -114,6 +115,7 @@ export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData
                     </ChaDetailBox>
                     <Equipments equData={equData} engravingsData={engravingsData} />
                     <Card cardData={cardData} />
+                    <GemBox gemData={gemData} />
                 </ChaContainer>
             ) : (
                 <></>

@@ -98,3 +98,19 @@ export const getCardData = async (chaName) => {
         return data;
     }
 };
+
+// 보석
+export const getGemData = async (chaName) => {
+    let data = await axios.get(url + `/armories/characters/${chaName}/gems`, {
+        headers: {
+            accept: 'application/json',
+            Authorization: `bearer ${apiKey}`,
+        },
+    });
+
+    if (data.data === null) {
+        return null;
+    } else {
+        return data;
+    }
+};

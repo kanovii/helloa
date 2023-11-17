@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
-import { getChaData, getEquData, getEngravingsData, getCardData } from './../services/Api';
+import { getChaData, getEquData, getEngravingsData, getCardData, getGemData } from './../services/Api';
 import { useLocation } from 'react-router';
 import { LuSprout } from 'react-icons/lu';
 import mokoko from './../img/mokoko.png';
@@ -87,12 +87,19 @@ export default function Search() {
         enabled: true,
     });
 
+    //카드 가져오는 api
     const { data: cardData } = useQuery({
         queryKey: ['cardData', onChaName],
         queryFn: () => getCardData(chaName),
         enabled: true,
     });
 
+    // 보석 가져오는 api
+    const { data: gemData } = useQuery({
+        queryKey: ['gemData', onChaName],
+        queryFn: () => getGemData(chaName),
+        enabled: true,
+    });
     const handleSearch = () => {
         setOnChaName(chaName);
     };
@@ -142,6 +149,7 @@ export default function Search() {
                         equData={equData}
                         engravingsData={engravingsData}
                         cardData={cardData}
+                        gemData={gemData}
                     />
                     {chaInfo.data.CharacterName ? (
                         <></>

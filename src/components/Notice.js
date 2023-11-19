@@ -46,7 +46,11 @@ export default function Notice() {
                         <NoticeBox>
                             {noticeData.data.map((i, index) => {
                                 if (index < 11) {
-                                    return <NoticeItemBox href={i.Link}>{i.Title}</NoticeItemBox>;
+                                    return (
+                                        <NoticeItemBox target='blank' href={i.Link}>
+                                            {i.Title}
+                                        </NoticeItemBox>
+                                    );
                                 }
                             })}
                         </NoticeBox>

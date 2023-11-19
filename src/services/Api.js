@@ -114,3 +114,19 @@ export const getGemData = async (chaName) => {
         return data;
     }
 };
+
+// 공지사항
+export const getNoticeData = async () => {
+    let data = await axios.get(url + `/news/notices`, {
+        headers: {
+            accept: 'application/json',
+            Authorization: `bearer ${apiKey}`,
+        },
+    });
+
+    if (data.data === null) {
+        return null;
+    } else {
+        return data;
+    }
+};

@@ -4,7 +4,7 @@ import { getNoticeData } from '../services/Api';
 import styled from 'styled-components';
 import { BsBalloonFill } from 'react-icons/bs';
 
-//스타일 시작 ===============================================================>
+// 스타일 시작 ===============================================================>
 const NoticeBox = styled.div`
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@ const NoticeItemBox = styled.a`
 const Loading = styled.div`
     text-align: center;
 `;
-//스타일 끝 ===============================================================>
+// 스타일 끝 ===============================================================>
 
 export default function Notice() {
     const { data: noticeData } = useQuery({

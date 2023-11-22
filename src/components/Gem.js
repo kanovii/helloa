@@ -41,6 +41,7 @@ export default function ({ gemData }) {
             <GemBox>
                 {gemData ? (
                     <>
+                        보석
                         {gemData.data.Gems.map((i) => {
                             const jsonData = JSON.parse(i.Tooltip);
                             return (

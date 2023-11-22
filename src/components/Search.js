@@ -1,6 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useEffect, useState } from 'react';
-import { getChaData, getEquData, getEngravingsData, getCardData, getGemData } from './../services/Api';
+import {
+    getChaData,
+    getEquData,
+    getEngravingsData,
+    getCardData,
+    getGemData,
+    getcollectibleData,
+} from './../services/Api';
 import { useLocation } from 'react-router';
 import { LuSprout } from 'react-icons/lu';
 import mokoko from './../img/mokoko.png';
@@ -9,6 +16,7 @@ import { GoSearch } from 'react-icons/go';
 
 import ChaBox from './ChaBox';
 import styled from 'styled-components';
+import Collectibles from './Collectibles';
 
 //스타일 시작 ===============================================================>
 const Loading = styled.div`
@@ -104,6 +112,12 @@ export default function Search() {
         setOnChaName(chaName);
     };
 
+    // 내실 가져오는 api
+    const { data: collectiblesData } = useQuery({
+        queryKey: ['collectiblesData', onChaName],
+        queryFn: () => getcollectibleData(chaName),
+    });
+
     useEffect(() => {
         if (error) {
             console.log(error.message);
@@ -158,6 +172,7 @@ export default function Search() {
                             <NoneImg src={backimg} />
                         </NoneImgBox>
                     )}
+                    <Collectibles collectiblesData={collectiblesData} />
                 </div>
             ) : isLoading ? (
                 <div className='innerContainer'>

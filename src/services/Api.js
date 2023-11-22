@@ -130,3 +130,19 @@ export const getNoticeData = async () => {
         return data;
     }
 };
+
+// 공지사항
+export const getcollectibleData = async (chaName) => {
+    let data = await axios.get(url + `/armories/characters/${chaName}/collectibles`, {
+        headers: {
+            accept: 'application/json',
+            Authorization: `bearer ${apiKey}`,
+        },
+    });
+
+    if (data.data === null) {
+        return null;
+    } else {
+        return data;
+    }
+};

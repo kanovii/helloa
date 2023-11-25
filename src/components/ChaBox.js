@@ -78,7 +78,7 @@ const Img = styled.img`
 //스타일 끝 ===============================================================>
 
 export default function ChaBox({ chaInfo, CharacterName, CharacterImage, equData, engravingsData, cardData, gemData }) {
-    console.log(engravingsData);
+    console.log(chaInfo);
 
     return (
         <>

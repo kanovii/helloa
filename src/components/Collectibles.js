@@ -8,7 +8,7 @@ const ColletiblesImg = styled.img`
 export default function Collectibles(collectiblesData) {
     return (
         <>
-            {collectiblesData ? (
+            {collectiblesData.data ? (
                 <div>
                     <div className='boxBasic'>
                         {collectiblesData.collectiblesData.data.map((i) => {

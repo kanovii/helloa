@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getChaData } from '../services/Api';
+import { getChaData, getEquData } from '../services/Api';
 import { useQuery } from '@tanstack/react-query';
 
 export default function Test() {
@@ -9,13 +9,21 @@ export default function Test() {
     const { data: chaData } = useQuery({
         queryKey: ['chaData', searchName],
         queryFn: () => getChaData(searchName),
+        refetchOnWindowFocus: false,
+    });
+
+    const { data: eqData } = useQuery({
+        queryKey: ['eqData', searchName],
+        queryFn: () => getEquData(searchName),
+        refetchOnWindowFocus: false,
     });
 
     const handleSearch = () => {
         setSearchName(chaName);
     };
 
-    // console.log(chaData);
+    console.log(chaData);
+    console.log(eqData);
     return (
         <div className='container'>
             <div className='innerContainer'>
@@ -34,6 +42,13 @@ export default function Test() {
                 />
                 <button onClick={handleSearch}>검색</button>
                 {chaData ? <img src={chaData.data.CharacterImage} /> : <div>없어용 ㅠㅠ</div>}
+                {eqData ? (
+                    eqData.data.map((i, index) => {
+                        return <img key={index} src={i.Icon} />;
+                    })
+                ) : (
+                    <div>없어용 ㅠㅠ</div>
+                )}
             </div>
         </div>
     );
